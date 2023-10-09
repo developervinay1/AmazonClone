@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import { HomeIcon as HomeSolid } from "react-native-heroicons/solid";
 import { HomeIcon } from "react-native-heroicons/outline";
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
 
 export default function Navigation() {
   const Tab = createBottomTabNavigator();
@@ -33,10 +35,20 @@ export default function Navigation() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Main"
           component={BottomTabs}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Register"
+          component={SignupScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
