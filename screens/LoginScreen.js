@@ -87,7 +87,7 @@ export default function LoginScreen() {
         }}
       >
         <Text>Don't have an account ?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+        <TouchableOpacity onPress={() => navigation.replace("Register")}>
           <Text style={{ fontWeight: "bold" }}>Register Now</Text>
         </TouchableOpacity>
       </View>

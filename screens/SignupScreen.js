@@ -1,6 +1,10 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { EnvelopeIcon, KeyIcon } from "react-native-heroicons/outline";
+import {
+  EnvelopeIcon,
+  KeyIcon,
+  UserIcon,
+} from "react-native-heroicons/outline";
 import { themeColor } from "../theme";
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,7 +14,7 @@ export default function SignupScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const loginUser = () => {
-    console.log(email, password);
+    console.log(username, email, password);
   };
 
   return (
@@ -36,11 +40,9 @@ export default function SignupScreen() {
           borderColor: themeColor.lightGray,
         }}
       >
-        <EnvelopeIcon color={"black"} />
+        <UserIcon color={"black"} />
         <TextInput
           placeholder="Username"
-          autoCapitalize="none"
-          autoCorrect={false}
           onChangeText={(text) => setUsername(text)}
         />
       </View>
@@ -112,7 +114,7 @@ export default function SignupScreen() {
         }}
       >
         <Text>Already have an account ?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+        <TouchableOpacity onPress={() => navigation.replace("Login")}>
           <Text style={{ fontWeight: "bold" }}>Login Now</Text>
         </TouchableOpacity>
       </View>
