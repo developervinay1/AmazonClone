@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import React, { useState } from "react";
 import {
   EnvelopeIcon,
@@ -7,14 +7,64 @@ import {
 } from "react-native-heroicons/outline";
 import { themeColor } from "../theme";
 import { useNavigation } from "@react-navigation/native";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../firebase";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 export default function SignupScreen() {
   const navigation = useNavigation();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const loginUser = () => {
-    console.log(username, email, password);
+  const signupUser = () => {
+    if (username === "" || email === "" || password === "") {
+      Alert.alert(
+        "Error",
+        "Invaild Details, Please fill all the details to continue.",
+        [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+          {
+            text: "Ok",
+            style: "default",
+          },
+        ],
+        { cancelable: true }
+      );
+    } else {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredentials) => {
+          const user = userCredentials.user;
+          const userId = user.uid;
+
+          setDoc(doc(db, "users", `${userId}`), {
+            username: username,
+            email: email,
+            createdAt: serverTimestamp(),
+          });
+
+          navigation.replace("Login");
+        })
+        .catch((error) => {
+          Alert.alert(
+            "Error",
+            error,
+            [
+              {
+                text: "Cancel",
+                style: "cancel",
+              },
+              {
+                text: "Ok",
+                style: "default",
+              },
+            ],
+            { cancelable: true }
+          );
+        });
+    }
   };
 
   return (
@@ -93,7 +143,7 @@ export default function SignupScreen() {
         />
       </View>
       <TouchableOpacity
-        onPress={loginUser}
+        onPress={signupUser}
         style={{
           marginVertical: 40,
           marginHorizontal: 20,
