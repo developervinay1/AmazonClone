@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import Categories from "../components/Categories";
 import Slider from "../components/Slider";
+import Services from "../components/Services";
 
 export default function HomeScreen() {
   return (
@@ -14,6 +15,7 @@ export default function HomeScreen() {
       <SubHeader />
       <Categories />
       <Slider />
+      <Services />
     </SafeAreaView>
   );
 }

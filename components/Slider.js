@@ -34,6 +34,7 @@ export default function Slider() {
         {sliderData.map((data, index) => {
           return (
             <Image
+              key={index}
               source={data.image}
               style={{
                 width: Dimensions.get("window").width - 50,
