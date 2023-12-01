@@ -5,6 +5,7 @@ import { auth } from "../firebase";
 import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import Categories from "../components/Categories";
+import Slider from "../components/Slider";
 
 export default function HomeScreen() {
   return (
@@ -12,6 +13,7 @@ export default function HomeScreen() {
       <Header />
       <SubHeader />
       <Categories />
+      <Slider />
     </SafeAreaView>
   );
 }
