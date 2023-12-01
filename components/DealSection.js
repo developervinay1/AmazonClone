@@ -3,7 +3,14 @@ import React from "react";
 
 export default function DealSection() {
   return (
-    <View style={{ marginTop: 10 }}>
+    <View
+      style={{
+        marginTop: 10,
+        borderBottomWidth: 2,
+        borderBottomColor: "lightgray",
+        paddingBottom: 10,
+      }}
+    >
       <Text style={{ marginLeft: 12, fontSize: 16, fontWeight: "bold" }}>
         Recommended deal for you
       </Text>

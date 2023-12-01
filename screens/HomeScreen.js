@@ -6,6 +6,7 @@ import Categories from "../components/Categories";
 import Slider from "../components/Slider";
 import Services from "../components/Services";
 import DealSection from "../components/DealSection";
+import BrandsSection from "../components/BrandsSection";
 
 export default function HomeScreen() {
   return (
@@ -17,6 +18,7 @@ export default function HomeScreen() {
         <Slider />
         <Services />
         <DealSection />
+        <BrandsSection />
       </ScrollView>
     </SafeAreaView>
   );
