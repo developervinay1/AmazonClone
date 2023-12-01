@@ -108,7 +108,6 @@ export default function Categories() {
           }}
         >
           {CategoriesData.map((data, index) => {
-            console.log(data);
             return (
               <View
                 key={index}
