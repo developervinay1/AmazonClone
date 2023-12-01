@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView, ScrollView, StatusBar } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
@@ -7,6 +7,7 @@ import Slider from "../components/Slider";
 import Services from "../components/Services";
 import DealSection from "../components/DealSection";
 import BrandsSection from "../components/BrandsSection";
+import ProductsSection from "../components/ProductsSection";
 
 export default function HomeScreen() {
   return (
@@ -19,6 +20,7 @@ export default function HomeScreen() {
         <Services />
         <DealSection />
         <BrandsSection />
+        <ProductsSection />
       </ScrollView>
     </SafeAreaView>
   );

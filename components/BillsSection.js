@@ -52,7 +52,7 @@ export default function BillsSection() {
               alignItems: "center",
               marginHorizontal: 10,
               marginVertical: 10,
-              borderRadius: 10,
+              borderRadius: 5,
               gap: 20,
               shadowColor: "#000",
               shadowOffset: {
@@ -141,7 +141,7 @@ export default function BillsSection() {
                   alignItems: "center",
                   marginHorizontal: 10,
                   marginVertical: 10,
-                  borderRadius: 10,
+                  borderRadius: 5,
                   gap: 10,
                   shadowColor: "#000",
                   shadowOffset: {
@@ -156,7 +156,7 @@ export default function BillsSection() {
               >
                 <Image
                   source={data.image}
-                  style={{ width: "100%", borderRadius: 10, height: 100 }}
+                  style={{ width: "100%", borderRadius: 5, height: 100 }}
                 />
                 <Text style={{ paddingHorizontal: 10, lineHeight: 20 }}>
                   Keep Shopping for {data.title}
