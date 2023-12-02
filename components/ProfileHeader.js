@@ -61,13 +61,13 @@ export default function ProfileHeader() {
                   backgroundColor: "#fafafa",
                   borderWidth: 1,
                   paddingHorizontal: 14,
-                  paddingVertical: 18,
+                  paddingVertical: 16,
                   borderRadius: 50,
                   width: "48%",
                   marginTop: 10,
                 }}
               >
-                <Text style={{ fontSize: 18, textAlign: "center" }}>
+                <Text style={{ fontSize: 16, textAlign: "center" }}>
                   {data.title}
                 </Text>
               </TouchableOpacity>
