@@ -1,4 +1,10 @@
-import { View, Text, StatusBar, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StatusBar,
+  TouchableOpacity,
+  Platform,
+} from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -10,9 +16,11 @@ export default function Header() {
       <View
         style={{
           backgroundColor: "#88dae0",
-          paddingTop: StatusBar.currentHeight + 8,
+          paddingTop:
+            Platform.OS === "android" ? StatusBar.currentHeight + 8 : 10,
           paddingHorizontal: 10,
-          paddingBottom: StatusBar.currentHeight - 20,
+          paddingBottom:
+            Platform.OS === "android" ? StatusBar.currentHeight - 20 : 10,
         }}
       >
         <View

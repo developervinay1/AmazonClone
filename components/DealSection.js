@@ -1,7 +1,15 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
-export default function DealSection() {
+export default function DealSection({
+  title,
+  imageURL,
+  salePercentage,
+  salePrice,
+  originalPrice,
+  productName,
+  objectFit,
+}) {
   return (
     <View
       style={{
@@ -12,14 +20,14 @@ export default function DealSection() {
       }}
     >
       <Text style={{ marginLeft: 12, fontSize: 16, fontWeight: "bold" }}>
-        Recommended deal for you
+        {title}
       </Text>
       <Image
-        source={require("../assets/recommend.jpg")}
+        source={imageURL}
         style={{
           width: "100%",
           height: 250,
-          objectFit: "cover",
+          objectFit: objectFit,
           marginTop: 15,
         }}
       />
@@ -42,7 +50,7 @@ export default function DealSection() {
             marginLeft: 10,
           }}
         >
-          18% Off
+          {salePercentage}% Off
         </Text>
         <Text style={{ color: "#be0201", fontWeight: "bold" }}>Deal</Text>
       </View>
@@ -55,7 +63,7 @@ export default function DealSection() {
           gap: 10,
         }}
       >
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>₹1,599</Text>
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>₹{salePrice}</Text>
         <View style={{ flexDirection: "row", gap: 5 }}>
           <Text
             style={{
@@ -73,12 +81,12 @@ export default function DealSection() {
               textDecorationLine: "line-through",
             }}
           >
-            ₹2,599
+            ₹{originalPrice}
           </Text>
         </View>
       </View>
       <View style={{ marginLeft: 10, gap: 5, marginVertical: 5 }}>
-        <Text>Nykaa Face Wash Gentle Skin Cleanser For All Types Of Skin.</Text>
+        <Text>{productName}</Text>
         <TouchableOpacity>
           <Text style={{ color: "#01717b", fontWeight: "bold" }}>
             See All Deals

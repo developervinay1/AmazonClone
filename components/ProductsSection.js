@@ -1,4 +1,10 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 
 export default function ProductsSection() {
@@ -25,7 +31,7 @@ export default function ProductsSection() {
       {products ? (
         <View>
           <Text style={{ marginLeft: 12, fontSize: 16, fontWeight: "bold" }}>
-            Great Offer & Deals Are Waiting
+            Upto 30% Off | Top Picks
           </Text>
           <View
             style={{
@@ -59,8 +65,8 @@ export default function ProductsSection() {
           </View>
         </View>
       ) : (
-        <View>
-          <Text>No Products</Text>
+        <View style={{ alignItems: "center", padding: 20 }}>
+          <ActivityIndicator color={"#88dae0"} />
         </View>
       )}
     </View>
