@@ -4,10 +4,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
-import { HomeIcon as HomeSolid } from "react-native-heroicons/solid";
-import { HomeIcon } from "react-native-heroicons/outline";
+import {
+  HomeIcon as HomeSolid,
+  UserIcon as UserSolid,
+} from "react-native-heroicons/solid";
+import { HomeIcon, UserIcon } from "react-native-heroicons/outline";
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 export default function Navigation() {
   const Tab = createBottomTabNavigator();
@@ -26,6 +30,19 @@ export default function Navigation() {
                 <HomeSolid color={"black"} />
               ) : (
                 <HomeIcon color={"black"} />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="You"
+          component={ProfileScreen}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <UserSolid color={"black"} />
+              ) : (
+                <UserIcon color={"black"} />
               ),
           }}
         />
