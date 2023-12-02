@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import { auth } from "../firebase";
 import { UserCircleIcon } from "react-native-heroicons/solid";
@@ -27,7 +27,7 @@ export default function ProfileHeader() {
   ];
 
   return (
-    <View>
+    <View showsVerticalScrollIndicator={false} style={{ marginBottom: 20 }}>
       {/* Profile User Info */}
       <View
         style={{
